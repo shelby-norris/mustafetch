@@ -11,27 +11,64 @@
     </style>
   </head>
   <body class="bg-slate-300">
-    <header class="">
-      <h1 class="text-5xl sm:text-6xl md:text-6xl lg:text-7xl text-center md:text-left lg:text-left" style="font-family: Audiowide">
-        Mustafetch
-      </h1>
-      <h3 class="text-lg sm:text-xl md:text-2xl lg:text-3xl text-center md:text-left lg:text-left font-semibold" style="font-family: Titillium Web">Star Wars Character Search</h3>
+    <header class="bg-gray-950">
+      <div class="p-4">
+        <h1
+          class="text-5xl sm:text-6xl md:text-6xl lg:text-7xl text-center text-amber-500"
+          style="font-family: Audiowide"
+        >
+          Mustafetch
+        </h1>
+        <h3
+          class="text-amber-400 text-lg sm:text-xl md:text-2xl lg:text-3x text-center font-semibold"
+          style="font-family: Titillium Web"
+        >
+          Star Wars Character Search
+        </h3>
+      </div>
     </header>
 
-    <main class="">
-      <section>Hero Goes Here</section>
+    <main>
+      <section
+        class="bg-cover bg-center w-full h-65 sm:h-72 md:h-96 lg:h-[32rem]"
+        style="background-image: url(hero3.jpg)"
+      >
+        <div class="flex flex-col h-full justify-center px-10">
+          <h1
+            class="font-semibold text-4xl p-2 sm:text-5xl md:text-6xl lg:text-7xl text-left text-white"
+            style="font-family: Titillium Web"
+          >
+            A Galaxy of Stories
+          </h1>
+          <h3
+            class="px-2 text-left text-amber-400 sm:text-lg md:text-xl lg:text-2xl"
+            style="font-family: Titillium Web"
+          >
+            Find your favorite Star Wars characters and learn what makes them
+            legendary!
+          </h3>
+        </div>
+      </section>
 
-      <section id="search-container">
-        <form onsubmit="handleCharacterSearch(event)" class="font-semibold" style="font-family: Titillium Web;">
-          <label for="search-name">Search By Character Name</label>
-          <input type="text" name="search-name" id="search-name" />
-          <button type="submit">Search</button>
+      <section id="search-container" class="flex flex-col text-xl w-[90vw] mx-auto rounded">
+        <form
+          onsubmit="handleCharacterSearch(event)"
+          class="rounded flex flex-col items-center font-semibold "
+          style="font-family: Titillium Web"
+        >
+          <label class="text-center p-3 md:p-4 lg:p-6" for="search-name">Search By Character Name</label>
+          <input type="text" name="search-name" id="search-name" placeholder="Search characters" class="max-w-xl w-full p-2 border border-gray-400 rounded-md bg-white text-slate-900" />
+          <button type="submit" class="bg-slate-900 text-white hover:bg-amber-500 hover:text-slate-900 hover:cursor-pointer font-semibold py-2 px-4 my-4 lg:my-6 border border-gray-400 rounded shadow">Search</button>
         </form>
       </section>
 
       <!-- <section id="pagination-container"></section> -->
 
-      <section class="" style="font-family: Titillium Web" id="character-container"></section>
+      <section
+        class=""
+        style="font-family: Titillium Web"
+        id="character-container"
+      ></section>
 
       <footer>Footer Goes Here</footer>
     </main>
