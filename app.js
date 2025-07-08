@@ -124,10 +124,10 @@ async function handleCharacterSearch(event) {
   const data = await searchCharacterName(name);
   setTimeout(() => {
     renderCharacters(data);
-  }, 4000);
+  }, 4000);  // Set Timeout so everyone can see the super cool loading Gif
   
 
   // renderPagination(data.numFound);
 
-  // Set Timeout so everyone can see the super cool loading Gif
+
 }
