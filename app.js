@@ -42,14 +42,14 @@ function renderCharacters(characters) {
     // imageElement.className =
 
     const nameElement = document.createElement("h2");
-    nameElement.innerHTML = character.name?.[0] || "Character not found";
+    nameElement.innerHTML = character.name
     // nameElement.className =
 
     const descriptionElement = document.createElement("p");
     descriptionElement.textContent = character.description;
 
-    characterElement.appendChild(imageElement);
     characterElement.appendChild(nameElement);
+    characterElement.appendChild(imageElement);
     characterElement.appendChild(descriptionElement);
 
     characterContainer.appendChild(characterElement);
@@ -120,12 +120,14 @@ async function handleCharacterSearch(event) {
 
   const name = event.target["search-name"].value;
   console.log(name);
-
+  renderLoading();
   const data = await searchCharacterName(name);
+  setTimeout(() => {
+    renderCharacters(data);
+  }, 4000);
+  
 
-  renderCharacters(data);
-
-  renderPagination(data.numFound);
+  // renderPagination(data.numFound);
 
   // Set Timeout so everyone can see the super cool loading Gif
 }
