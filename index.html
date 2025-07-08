@@ -6,32 +6,36 @@
     <title>Mustafetch</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link rel="stylesheet" href="style.css" />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Audiowide&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap");
+    </style>
   </head>
   <body class="bg-slate-300">
-    <header class="flex flex-col mx-auto">
-      <h1 class="text-6xl text-center">Mustafetch</h1>
-      <h3 class="text-3xl text-center">Star Wars Character Search</h3>
+    <header class="">
+      <h1 class="text-5xl sm:text-6xl md:text-6xl lg:text-7xl text-center md:text-left lg:text-left" style="font-family: Audiowide">
+        Mustafetch
+      </h1>
+      <h3 class="text-lg sm:text-xl md:text-2xl lg:text-3xl text-center md:text-left lg:text-left font-semibold" style="font-family: Titillium Web">Star Wars Character Search</h3>
     </header>
 
-    <main>
+    <main class="">
       <section>Hero Goes Here</section>
 
       <section id="search-container">
-        <form onsubmit="handleCharacterSearch(event)" class="">
+        <form onsubmit="handleCharacterSearch(event)" class="font-semibold" style="font-family: Titillium Web;">
           <label for="search-name">Search By Character Name</label>
           <input type="text" name="search-name" id="search-name" />
           <button type="submit">Search</button>
         </form>
       </section>
 
-      <section id="pagination-container"></section>
+      <!-- <section id="pagination-container"></section> -->
 
-      <section id="character-container"></section>
+      <section class="" style="font-family: Titillium Web" id="character-container"></section>
 
       <footer>Footer Goes Here</footer>
     </main>
     <script src="app.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.2/src/fuse.min.js"></script>
-
   </body>
 </html>
