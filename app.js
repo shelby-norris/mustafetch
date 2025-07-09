@@ -31,10 +31,11 @@ async function searchCharacterName(name) {
 function renderCharacters(characters) {
   const characterContainer = document.getElementById("character-container");
   characterContainer.innerHTML = "";
-  characterContainer.className = "max-w-xl bg-slate-100 border border-gray-500 shadow-xl rounded-lg items-center m-6"
+
 
   characters.forEach((character) => {
     const characterElement = document.createElement("div");
+    characterElement.className = "max-w-xl bg-slate-100 border-2 border-amber-500 shadow-xl rounded-lg items-center m-6"
 
     const imageElement = document.createElement("img");
     imageElement.src = character.image;
@@ -43,7 +44,7 @@ function renderCharacters(characters) {
 
     const nameElement = document.createElement("h2");
     nameElement.innerHTML = character.name
-    nameElement.className = "text-2xl lg:text-3xl text-center text-shadow-md font-bold py-3"
+    nameElement.className = "text-2xl lg:text-3xl text-center text-shadow-sm font-bold py-3"
 
     const descriptionElement = document.createElement("p");
     descriptionElement.textContent = character.description;
@@ -110,6 +111,8 @@ function renderLoading() {
   const loadingGif = document.createElement("img");
   loadingGif.src =
     "https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExMXplMGZsb3hjdHpsMHkxdDlpbzV5ZGl2Y2w1Nm5sNmFuMWs5ZnF5NyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/35KomAE3Mj421dSv1r/giphy.gif";
+  
+  loadingGif.classList = "mb-10"
 
   loadingGif.width = "300";
 
@@ -118,7 +121,7 @@ function renderLoading() {
 
 async function handleCharacterSearch(event) {
   event.preventDefault();
-
+  characterAutoScroll();
   const name = event.target["search-name"].value;
   console.log(name);
   renderLoading();
@@ -128,9 +131,17 @@ async function handleCharacterSearch(event) {
   }, 4000);  // Set Timeout so everyone can see the super cool loading Gif
 
   // if data is 0 render user search and no characters found
-
+  if (data.length === 0) {
+    characterContainer.innerHTML = `No results found for "${name}".`
+  }
   // renderPagination(data.numFound);
 
 
 }
 
+// Automatically scroll to character container when search is clicked
+function characterAutoScroll () {
+  const characterContainer = document.getElementById("character-container");
+
+  characterContainer.scrollIntoView({behavior: "smooth"});
+}

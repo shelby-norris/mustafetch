@@ -4,24 +4,27 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mustafetch</title>
-    <script src="https://cdn.jsdelivr.net/npm/fuse.js/dist/fuse.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link rel="stylesheet" href="style.css" />
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Audiowide&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap");
     </style>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
   </head>
-  <body class="bg-slate-600 min-h-[100vh]">
+  <body class="bg-slate-500 min-h-screen">
     <header class="bg-gray-950">
       <div class="p-4">
         <h1
-          class="text-lg sm:text-xl md:text-2xl lg:text-3xl text-left text-amber-500"
+          class="text-xl md:text-2xl lg:text-4xl text-left text-amber-500"
           style="font-family: Audiowide"
         >
           Mustafetch
         </h1>
         <h3
-          class="text-amber-400 text-xs sm:text-sm md:text-md lg:text-xl text-left font-semibold"
+          class="text-amber-400 text-xs sm:text-sm md:text-md lg:text-lg text-left font-semibold"
           style="font-family: Titillium Web"
         >
           Star Wars Character Search
@@ -29,14 +32,14 @@
       </div>
     </header>
 
-    <main>
+    <main class="flex-1">
       <section
         class="bg-cover bg-center w-full h-65 sm:h-72 md:h-96 lg:h-[32rem]"
         style="background-image: url(hero3.jpg)"
       >
         <div class="flex flex-col h-full justify-center px-10">
           <h1
-            class="font-semibold text-4xl p-2 sm:text-5xl md:text-6xl lg:text-7xl text-left text-white"
+            class="font-semibold text-6xl p-2 sm:text-7xl md:text-8xl lg:text-9xl text-left text-white"
             style="font-family: Titillium Web"
           >
             A Galaxy of Stories
@@ -57,10 +60,12 @@
       >
         <form
           onsubmit="handleCharacterSearch(event)"
-          class="rounded flex flex-col items-center font-semibold"
+          class="rounded flex flex-col items-center font-semibold mt-8"
           style="font-family: Titillium Web"
         >
-          <label class="text-gray-200 text-center p-3 md:p-4 lg:p-6" for="search-name"
+          <label
+            class="text-gray-200 text-center p-3 md:p-4 lg:p-6 text-shadow-md"
+            for="search-name"
             >Search By Character Name</label
           >
           <input
@@ -81,7 +86,7 @@
 
       <!-- <section id="pagination-container"></section> -->
 
-      <section class="flex flex-col mx-auto items-center">
+      <section class="flex flex-col mx-auto items-center min-h-100">
         <div
           class=""
           style="font-family: Titillium Web"
@@ -89,7 +94,16 @@
         ></div>
       </section>
 
-      <!-- <footer>Footer Goes Here</footer> -->
+      <footer class="flex flex-row w-auto min-h-20 justify-center bg-gray-950">
+        <div
+          class="p-4 mt-2 w-2xl mx-8 justify-center text-center text-amber-500 text-md"
+          style="font-family: Titillium Web"
+        >
+          &copy 2025 Shelby Norris
+          <a href="https://github.com/shelby-norris"><i class="fa-brands fa-github text-2xl ml-4"></i></a>
+          <a href="https://linkedin.com/in/shelby-norris-781624207"><i class="fa-brands fa-linkedin text-2xl ml-4"></i></a>
+        </div>
+      </footer>
     </main>
 
     <script src="app.js"></script>
