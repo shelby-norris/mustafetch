@@ -4,23 +4,24 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mustafetch</title>
+    <script src="https://cdn.jsdelivr.net/npm/fuse.js/dist/fuse.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link rel="stylesheet" href="style.css" />
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Audiowide&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap");
     </style>
   </head>
-  <body class="bg-slate-300">
+  <body class="bg-slate-600 min-h-[100vh]">
     <header class="bg-gray-950">
       <div class="p-4">
         <h1
-          class="text-5xl sm:text-6xl md:text-6xl lg:text-7xl text-center text-amber-500"
+          class="text-lg sm:text-xl md:text-2xl lg:text-3xl text-left text-amber-500"
           style="font-family: Audiowide"
         >
           Mustafetch
         </h1>
         <h3
-          class="text-amber-400 text-lg sm:text-xl md:text-2xl lg:text-3x text-center font-semibold"
+          class="text-amber-400 text-xs sm:text-sm md:text-md lg:text-xl text-left font-semibold"
           style="font-family: Titillium Web"
         >
           Star Wars Character Search
@@ -44,35 +45,53 @@
             class="px-2 text-left text-amber-400 sm:text-lg md:text-xl lg:text-2xl"
             style="font-family: Titillium Web"
           >
-            Find your favorite Star Wars characters and learn what makes them
+            Search your favorite Star Wars characters and learn what makes them
             legendary!
           </h3>
         </div>
       </section>
 
-      <section id="search-container" class="flex flex-col text-xl w-[90vw] mx-auto rounded">
+      <section
+        id="search-container"
+        class="flex flex-col text-xl w-[90vw] mx-auto rounded"
+      >
         <form
           onsubmit="handleCharacterSearch(event)"
-          class="rounded flex flex-col items-center font-semibold "
+          class="rounded flex flex-col items-center font-semibold"
           style="font-family: Titillium Web"
         >
-          <label class="text-center p-3 md:p-4 lg:p-6" for="search-name">Search By Character Name</label>
-          <input type="text" name="search-name" id="search-name" placeholder="Search characters" class="max-w-xl w-full p-2 border border-gray-400 rounded-md bg-white text-slate-900" />
-          <button type="submit" class="bg-slate-900 text-white hover:bg-amber-500 hover:text-slate-900 hover:cursor-pointer font-semibold py-2 px-4 my-4 lg:my-6 border border-gray-400 rounded shadow">Search</button>
+          <label class="text-gray-200 text-center p-3 md:p-4 lg:p-6" for="search-name"
+            >Search By Character Name</label
+          >
+          <input
+            type="text"
+            name="search-name"
+            id="search-name"
+            placeholder="Search characters"
+            class="max-w-xl w-full p-2 border border-gray-400 rounded-md bg-white text-slate-900"
+          />
+          <button
+            type="submit"
+            class="bg-slate-900 text-white hover:bg-amber-500 hover:text-slate-900 hover:cursor-pointer font-semibold py-2 px-4 my-4 lg:my-6 border border-gray-400 rounded shadow"
+          >
+            Search
+          </button>
         </form>
       </section>
 
       <!-- <section id="pagination-container"></section> -->
 
-      <section
-        class=""
-        style="font-family: Titillium Web"
-        id="character-container"
-      ></section>
+      <section class="flex flex-col mx-auto items-center">
+        <div
+          class=""
+          style="font-family: Titillium Web"
+          id="character-container"
+        ></div>
+      </section>
 
-      <footer>Footer Goes Here</footer>
+      <!-- <footer>Footer Goes Here</footer> -->
     </main>
+
     <script src="app.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.2/src/fuse.min.js"></script>
   </body>
 </html>

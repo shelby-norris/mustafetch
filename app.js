@@ -3,7 +3,8 @@ const state = {
   currentName: "",
 };
 
-// Retrieve API data via Search
+
+// Search Characters
 async function searchCharacterName(name) {
   state.currentName = name;
 
@@ -30,26 +31,26 @@ async function searchCharacterName(name) {
 function renderCharacters(characters) {
   const characterContainer = document.getElementById("character-container");
   characterContainer.innerHTML = "";
-  // characterContainer.className =
+  characterContainer.className = "max-w-xl bg-slate-100 border border-gray-500 shadow-xl rounded-lg items-center m-6"
 
   characters.forEach((character) => {
     const characterElement = document.createElement("div");
-    // characterElement.className =
 
     const imageElement = document.createElement("img");
     imageElement.src = character.image;
     imageElement.alt = character.name;
-    // imageElement.className =
+    imageElement.className = "rounded-t-lg"
 
     const nameElement = document.createElement("h2");
     nameElement.innerHTML = character.name
-    // nameElement.className =
+    nameElement.className = "text-2xl lg:text-3xl text-center text-shadow-md font-bold py-3"
 
     const descriptionElement = document.createElement("p");
     descriptionElement.textContent = character.description;
+    descriptionElement.className = "px-2 pb-3"
 
-    characterElement.appendChild(nameElement);
     characterElement.appendChild(imageElement);
+    characterElement.appendChild(nameElement);
     characterElement.appendChild(descriptionElement);
 
     characterContainer.appendChild(characterElement);
@@ -125,9 +126,11 @@ async function handleCharacterSearch(event) {
   setTimeout(() => {
     renderCharacters(data);
   }, 4000);  // Set Timeout so everyone can see the super cool loading Gif
-  
+
+  // if data is 0 render user search and no characters found
 
   // renderPagination(data.numFound);
 
 
 }
+
