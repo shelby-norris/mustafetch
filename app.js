@@ -58,51 +58,6 @@ function renderCharacters(characters) {
   });
 }
 
-// // Pagination Logic ****** MAY NOT NEED ******
-// function renderPagination(numFound) {
-//   const totalPages = Math.ceil(numFound / 10);
-
-//   const paginationContainer = document.getElementById("pagination-container");
-//   paginationContainer.innerHTML = "";
-
-//   const prevBtn = document.createElement("button");
-//   prevBtn.textContent = "Previous";
-//   // prevBtn.className =
-//   prevBtn.disabled = state.currentPage === 1;
-//   prevBtn.onclick = async () => {
-//     state.currentPage--; // decrease the page number
-//     const data = await searchCharacterName(
-//       state.currentName,
-//       state.currentPage
-//     );
-
-//     renderCharacters(characters);
-//     renderPagination(data.numFound);
-//   };
-
-//   const nextBtn = document.createElement("button");
-//   nextBtn.textContent = "Next";
-//   // nextBtn.className =
-//   nextBtn.disabled = state.currentPage === totalPages;
-//   nextBtn.onclick = async () => {
-//     state.currentPage++; // increase page number
-//     const date = await searchCharacterName(
-//       state.currentName,
-//       state.currentPage
-//     );
-
-//     renderCharacters(characters);
-//     renderPagination(data.numFound);
-//   };
-
-//   const pageCountElem = document.createElement("p");
-//   pageCountElem.innerHTML = `Page ${state.currentPage} of ${totalPages}`;
-
-//   paginationContainer.appendChild(prevBtn);
-//   paginationContainer.appendChild(pageCountElem);
-//   paginationContainer.appendChild(nextBtn);
-// }
-
 // Loading GIF
 function renderLoading() {
   const characterContainer = document.getElementById("character-container");
@@ -134,9 +89,6 @@ async function handleCharacterSearch(event) {
   if (data.length === 0) {
     characterContainer.innerHTML = `No results found for "${name}".`
   }
-  // renderPagination(data.numFound);
-
-
 }
 
 // Automatically scroll to character container when search is clicked
