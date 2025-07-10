@@ -1,5 +1,4 @@
 const state = {
-  currentPage: 1,
   currentName: "",
 };
 
@@ -83,7 +82,7 @@ async function handleCharacterSearch(event) {
   const data = await searchCharacterName(name);
   setTimeout(() => {
     renderCharacters(data);
-  }, 4000); // Set Timeout so everyone can see the super cool loading Gif
+  }, 4000);
 
   // if data is 0 render user search and no characters found
   if (!data || data.length === 0) {
@@ -91,7 +90,8 @@ async function handleCharacterSearch(event) {
     characterContainer.innerHTML = "";
 
     const noResults = document.createElement("p");
-    noResults.innerHTML = `No Results Found for ${name}`;
+    noResults.innerHTML = `No Results Found for "${name}"`;
+    noResults.classList = "text-3xl text-gray-900 text-center m-4 p-2";
 
     characterContainer.appendChild(noResults);
   }
@@ -100,6 +100,5 @@ async function handleCharacterSearch(event) {
 // Automatically scroll to character container when search is clicked
 function characterAutoScroll() {
   const characterContainer = document.getElementById("character-container");
-
   characterContainer.scrollIntoView({ behavior: "smooth" });
 }
