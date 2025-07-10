@@ -6,24 +6,111 @@
     <title>Mustafetch</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link rel="stylesheet" href="style.css" />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Audiowide&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap");
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
   </head>
-  <body class="bg-slate-300">
-    <header class="flex flex-col mx-auto">
-      <h1 class="text-6xl text-center">Mustafetch</h1>
-      <h3 class="text-3xl text-center">Star Wars Character Search</h3>
+  <body class="bg-slate-500 min-h-screen">
+    <header class="bg-gray-950">
+      <div class="p-4">
+        <h1
+          class="text-xl md:text-2xl lg:text-4xl text-left text-amber-500"
+          style="font-family: Audiowide"
+        >
+          Mustafetch
+        </h1>
+        <h3
+          class="text-amber-400 text-xs sm:text-sm md:text-md lg:text-lg text-left font-semibold"
+          style="font-family: Titillium Web"
+        >
+          Star Wars Character Search
+        </h3>
+      </div>
     </header>
 
-    <main>
-      <section>Hero Goes Here</section>
+    <main class="flex-1">
+      <section
+        class="bg-cover bg-center w-full h-65 sm:h-72 md:h-96 lg:h-[32rem]"
+        style="background-image: url(hero3.jpg)"
+      >
+        <div class="flex flex-col h-full justify-center px-10">
+          <h1
+            class="font-semibold text-6xl p-2 sm:text-7xl md:text-8xl lg:text-9xl text-left text-white"
+            style="font-family: Titillium Web"
+          >
+            A Galaxy of Stories
+          </h1>
+          <h3
+            class="px-2 text-left text-amber-400 sm:text-lg md:text-xl lg:text-2xl"
+            style="font-family: Titillium Web"
+          >
+            Search your favorite Star Wars characters and learn what makes them
+            legendary!
+          </h3>
+        </div>
+      </section>
 
-      <section id="search-container"></section>
+      <section
+        id="search-container"
+        class="flex flex-col w-[90vw] mx-auto rounded"
+      >
+        <form
+          onsubmit="handleCharacterSearch(event)"
+          class="rounded flex flex-col items-center font-semibold mt-8"
+          style="font-family: Titillium Web"
+        >
+          <label
+            class="text-gray-200 text-center text-lg md:text-xl lg:text-2xl p-3 md:p-4 lg:p-6 text-shadow-md"
+            for="search-name"
+            >Search By Character Name</label
+          >
+          <input
+            type="text"
+            name="search-name"
+            id="search-name"
+            placeholder="Search characters"
+            class="max-w-xl w-full p-2 border border-gray-400 rounded-md bg-white text-slate-900"
+            required
+          />
+          <button
+            id="search-btn"
+            type="submit"
+            class="bg-slate-900 text-white transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-amber-500 hover:text-slate-900 hover:cursor-pointer font-semibold text-lg lg:text-2xl py-2 px-4 my-4 lg:my-6 border border-gray-400 rounded shadow"
+          >
+            Search
+          </button>
+        </form>
+      </section>
 
-      <section id="pagination-container"></section>
-
-      <section id="character-container"></section>
-
-      <footer>Footer Goes Here</footer>
+      <section class="flex flex-col mx-auto items-center min-h-100">
+        <div
+          style="font-family: Titillium Web"
+          id="character-container"
+        ></div>
+      </section>
     </main>
+    <footer class="flex flex-row w-auto min-h-20 justify-center bg-gray-950">
+      <div
+        class="p-4 mt-2 w-2xl mx-8 justify-center text-center text-amber-500 text-md"
+        style="font-family: Titillium Web"
+      >
+        &copy 2025 Shelby Norris
+        <a href="https://github.com/shelby-norris"
+          ><i
+            class="fa-brands fa-github text-2xl ml-4 transition delay-100 duration-200 ease-in-out hover:-translate-y-1 hover:scale-100"
+          ></i
+        ></a>
+        <a href="https://linkedin.com/in/shelby-norris-781624207"
+          ><i
+            class="fa-brands fa-linkedin text-2xl ml-4 transition delay-100 duration-200 ease-in-out hover:-translate-y-1 hover:scale-100"
+          ></i
+        ></a>
+      </div>
+    </footer>
     <script src="app.js"></script>
   </body>
 </html>
