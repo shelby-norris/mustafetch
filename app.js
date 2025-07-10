@@ -3,7 +3,6 @@ const state = {
   currentName: "",
 };
 
-
 // Search Characters
 async function searchCharacterName(name) {
   state.currentName = name;
@@ -32,23 +31,24 @@ function renderCharacters(characters) {
   const characterContainer = document.getElementById("character-container");
   characterContainer.innerHTML = "";
 
-
   characters.forEach((character) => {
     const characterElement = document.createElement("div");
-    characterElement.className = "max-w-xl bg-slate-100 border-2 border-amber-500 shadow-xl rounded-lg items-center m-6"
+    characterElement.className =
+      "max-w-xl bg-slate-100 border-2 border-amber-500 shadow-xl rounded-lg items-center m-6";
 
     const imageElement = document.createElement("img");
     imageElement.src = character.image;
     imageElement.alt = character.name;
-    imageElement.className = "rounded-t-lg"
+    imageElement.className = "rounded-t-lg";
 
     const nameElement = document.createElement("h2");
-    nameElement.innerHTML = character.name
-    nameElement.className = "text-2xl lg:text-3xl text-center text-shadow-sm font-bold py-3"
+    nameElement.innerHTML = character.name;
+    nameElement.className =
+      "text-2xl lg:text-3xl text-center text-shadow-sm font-bold py-3";
 
     const descriptionElement = document.createElement("p");
     descriptionElement.textContent = character.description;
-    descriptionElement.className = "px-2 pb-3"
+    descriptionElement.className = "px-2 pb-3";
 
     characterElement.appendChild(imageElement);
     characterElement.appendChild(nameElement);
@@ -66,8 +66,8 @@ function renderLoading() {
   const loadingGif = document.createElement("img");
   loadingGif.src =
     "https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExMXplMGZsb3hjdHpsMHkxdDlpbzV5ZGl2Y2w1Nm5sNmFuMWs5ZnF5NyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/35KomAE3Mj421dSv1r/giphy.gif";
-  
-  loadingGif.classList = "mb-10"
+
+  loadingGif.classList = "mb-10";
 
   loadingGif.width = "300";
 
@@ -83,17 +83,23 @@ async function handleCharacterSearch(event) {
   const data = await searchCharacterName(name);
   setTimeout(() => {
     renderCharacters(data);
-  }, 4000);  // Set Timeout so everyone can see the super cool loading Gif
+  }, 4000); // Set Timeout so everyone can see the super cool loading Gif
 
   // if data is 0 render user search and no characters found
-  if (data.length === 0) {
-    characterContainer.innerHTML = `No results found for "${name}".`
+  if (!data || data.length === 0) {
+    const characterContainer = document.getElementById("character-container");
+    characterContainer.innerHTML = "";
+
+    const noResults = document.createElement("p");
+    noResults.innerHTML = `No Results Found for ${name}`;
+
+    characterContainer.appendChild(noResults);
   }
 }
 
 // Automatically scroll to character container when search is clicked
-function characterAutoScroll () {
+function characterAutoScroll() {
   const characterContainer = document.getElementById("character-container");
 
-  characterContainer.scrollIntoView({behavior: "smooth"});
+  characterContainer.scrollIntoView({ behavior: "smooth" });
 }
