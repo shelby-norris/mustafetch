@@ -1,6 +1,6 @@
 # Mustafetch - Star Wars Character Search
 
-A Star Wars character search app!
+A Star Wars character search app, named after the planet Mustafar!
 
 ## Features and Function
 
@@ -8,11 +8,14 @@ A Star Wars character search app!
 
 - The base url: ```https://starwars-databank-server.vercel.app/api/v1/```
 
-    ![alt text](mustafetch-postman-collection.png)
+    ![alt text](mustafetch-postman-collection3.png)
 
-- Pagination
-- Search bar function to search characters by name
-- Character grid on page load so users can paginate through the list of characters if no name is used in search input
+- Search bar function to search characters by name, built with JavaScript
+- Card that displays character name, description, and photo
+- Styled with Tailwind CSS
+- [Unsplash](https://unsplash.com/) for hero stock photo
+- [Font Awesome](https://fontawesome.com/search?o=r&ip=brands) for social media icons
+- [Google Fonts](https://fonts.google.com/) for text styling
 
 ## Try It Out!
 
