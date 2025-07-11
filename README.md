@@ -19,4 +19,4 @@ A Star Wars character search app, named after the planet Mustafar!
 
 ## Try It Out!
 
-Mustafetch is currently under construction. Check out my [Projects Board](https://github.com/users/shelby-norris/projects/2) to keep up with my progress, or visit the [GitHub Pages](https://shelby-norris.github.io/mustafetch/) link!
+Mustafetch is live! . Check out my [Projects Board](https://github.com/users/shelby-norris/projects/2) to keep up with any future updates, or visit the [GitHub Pages](https://shelby-norris.github.io/mustafetch/) link!
